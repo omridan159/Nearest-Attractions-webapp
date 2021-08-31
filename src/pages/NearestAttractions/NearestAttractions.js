@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './NearestAttractions.css'
+import './NearestAttractions.css';
 import { useSelector } from 'react-redux';
 import Table from '../../components/Table/Table';
 import GoogleMaps from '../../components/GoogleMap/GoogleMap';
@@ -31,9 +31,10 @@ const NearestAttractions = (props) => {
 
    return (
       <div>
-         <h1 className="header">טבלת מיקומים קרובים</h1>
+         <h1 className='header'>טבלת מיקומים קרובים</h1>
          <div className='box'>
             <Table data={nearestAttractions || []} />
+            <h1 className='header'>מפת אטרקציות</h1>
             <GoogleMaps data={data} />
          </div>
       </div>

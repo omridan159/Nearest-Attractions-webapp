@@ -1,5 +1,5 @@
 const mapContainerStyle = {
-   height: '60vh',
+   height: '40vw',
    width: '60vw',
    margin: 'auto',
 };

@@ -19,8 +19,66 @@
    box-shadow: 0 0 20px 8px #d0d0d0;
 }
 
+.btn-shine {
+   position: relative;
+   margin: 0;
+   padding: 5px 12px;
+   height: 5vw;
+   width: 15vw;
+   outline: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   background-color: #ffffff;
+   border: 1px solid rgba(22, 76, 167, 0.6);
+   border-radius: 10px;
+   color: #1d89ff;
+   font-weight: 400;
+   font-size: 1.5em;
+   font-family: inherit;
+   z-index: 0;
+   overflow: hidden;
+   transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+   margin-top: 5vw;
+   border: 1px solid;
+   overflow: hidden;
+   position: relative;
+}
+.btn-shine span {
+   z-index: 20;
+}
+.btn-shine:after {
+   background: #38ef7d;
+   content: '';
+   height: 155px;
+   left: -75px;
+   opacity: 0.4;
+   position: absolute;
+   top: -50px;
+   transform: rotate(35deg);
+   transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+   width: 50px;
+   z-index: -10;
+}
+.btn-shine:hover:after {
+   left: 120%;
+   transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-find-attractions {
+   width: 25vw;
+}
+
 @media only screen and (max-width: 600px) {
    .coordinates-content {
+      width: 65vw;
+   }
+   .btn-shine {
+      height: 20vw;
       width: 50vw;
+   }
+   .btn-find-attractions {
+      width: 70vw;
    }
 }

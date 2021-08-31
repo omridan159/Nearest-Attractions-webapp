@@ -30,7 +30,11 @@ const Dashboard = () => {
 
    return (
       <div className='coordinates-container'>
-         <button onClick={getLocation}>הצג מיקום</button>
+
+         <button onClick={getLocation} class='btn-shine'>
+            <span>הצג מיקום</span>
+         </button>
+
          <h1>Coordinates</h1>
          {lng ? (
             <div className='coordinates-container'>
@@ -51,7 +55,9 @@ const Dashboard = () => {
                   state: { lat, lng },
                }}
             >
-               <button>מצא אטרקציות בסביבתי</button>
+               <button class='btn-shine btn-find-attractions'>
+                  <span>מצא אטרקציות בסביבתי</span>
+               </button>
             </Link>
          ) : (
             ''
