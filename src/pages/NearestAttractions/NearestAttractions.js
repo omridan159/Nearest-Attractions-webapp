@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './NearestAttractions.css';
 import { useSelector } from 'react-redux';
 import Table from '../../components/Table/Table';
@@ -7,9 +7,10 @@ import { calculateDistance } from '../../utils/helpers';
 
 const NearestAttractions = (props) => {
    const [nearestAttractions, setNearestAttractions] = useState(null);
-   const [userCurrentLocation, setUserCurrentLocation] = useState(
-      props.location.state
-   );
+
+   const userLocation = useMemo(() => {
+      return { lat: props.location.state.lat, lng: props.location.state.lng };
+   }, [props.location.state]);
 
    const data = useSelector((state) => state.attractionsData.data);
 
@@ -18,8 +19,8 @@ const NearestAttractions = (props) => {
          return {
             ...attractions,
             Distance: calculateDistance(
-               userCurrentLocation.lat,
-               userCurrentLocation.lng,
+               userLocation.lat,
+               userLocation.lng,
                attractions.Y,
                attractions.X
             ).toFixed(0),
@@ -27,7 +28,7 @@ const NearestAttractions = (props) => {
       });
 
       setNearestAttractions(mapAttractions);
-   }, [userCurrentLocation]);
+   }, [data, userLocation]);
 
    return (
       <div>

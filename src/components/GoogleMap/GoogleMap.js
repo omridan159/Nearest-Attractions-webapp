@@ -1,5 +1,5 @@
 import React from 'react';
-import './GoogleMap.css'
+import './GoogleMap.css';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import {
    mapContainerStyle,
@@ -30,7 +30,7 @@ const GoogleMaps = ({ data }) => {
          >
             {data.map((attraction) => (
                <Marker
-                  key={attraction.key}
+                  key={attraction._id}
                   position={{
                      lat: Number(attraction.Y),
                      lng: Number(attraction.X),

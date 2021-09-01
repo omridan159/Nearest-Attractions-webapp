@@ -21,4 +21,21 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
    return d;
 }
 
-export { calculateDistance };
+const getAttractionTypesList = (data) => {
+   const mapAttractionTypes = data.map((attraction) => {
+      return attraction.Attraction_Type;
+   });
+   mapAttractionTypes.push('הכל');
+   const attractionTypes = [...new Set(mapAttractionTypes)];
+   return attractionTypes;
+};
+
+function filterAttractionsByType(attractionType, data) {
+   return attractionType === 'הכל'
+      ? data
+      : data.filter((attraction) => {
+           return attraction.Attraction_Type === attractionType;
+        });
+}
+
+export { calculateDistance, getAttractionTypesList, filterAttractionsByType };

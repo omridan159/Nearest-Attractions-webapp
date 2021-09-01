@@ -21,6 +21,13 @@ const columns = [
       sortable: false,
    },
    {
+      name: 'Attraction_Type',
+      header: 'סוג אטרקציה',
+      minWidth: 150,
+      defaultFlex: 1,
+      sortable: false,
+   },
+   {
       name: 'Name',
       header: 'שם',
       minWidth: 150,
