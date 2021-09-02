@@ -1,20 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { attractionsData } from '../../constants/Attractions';
+import { fetchAttractions } from '../actions/attractions';
 
 const initialState = {
-   data: attractionsData,
+   data: [],
+   error: null,
+};
+
+const failedRequestAttractions = (state, action) => {
+   state.error = action.payload;
 };
 
 export const attractionsDataSlice = createSlice({
    name: 'attractionsData',
    initialState,
    reducers: {
-      updateAttractionsData: (state, action) => {
-         const index = action.payload.key;
-         const filed = action.payload.columnId;
-         const value = action.payload.value;
-
-         state.data[index][filed] = value;
+      [fetchAttractions.fulfilled]: (state, action) => {
+         state.data = action.payload;
+         state.error = false;
+      },
+      [fetchAttractions.rejected]: (state, action) => {
+         failedRequestAttractions(state, action);
       },
    },
    extraReducers: {},
