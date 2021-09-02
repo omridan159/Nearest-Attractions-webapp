@@ -8,7 +8,7 @@ import {
    getAttractionTypesList,
    filterAttractionsByType,
 } from '../../utils/helpers';
-import { updateAttractionsData } from '../../store/slices/attractionsDataSlice';
+// import { updateAttractionsData } from '../../store/slices/attractionsDataSlice';
 import { gridStyle, columns, defaultSortInfo } from '../../constants/Table';
 
 const Table = ({ data }) => {
@@ -17,10 +17,10 @@ const Table = ({ data }) => {
 
    const dispatch = useDispatch();
 
-   const onEditComplete = ({ value, columnId, rowIndex, data }) => {
+/*    const onEditComplete = ({ value, columnId, rowIndex, data }) => {
       const key = data._id;
       dispatch(updateAttractionsData({ value, columnId, key }));
-   };
+   }; */
 
    const handleRadio = (e) => {
       const value = e.target.value;
@@ -71,7 +71,7 @@ const Table = ({ data }) => {
 
          <ReactDataGrid
             idProperty='id'
-            onEditComplete={onEditComplete}
+            // onEditComplete={onEditComplete}
             rtl={true}
             columns={columns}
             defaultSortInfo={defaultSortInfo}

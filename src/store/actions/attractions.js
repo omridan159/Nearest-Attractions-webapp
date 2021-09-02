@@ -5,9 +5,11 @@ export const fetchAttractions = createAsyncThunk(
    'attractions/fetchAttractions',
    async (_, { rejectWithValue }) => {
       try {
-         const res = await getAttractionsData();
-         console.log(res);
-         return res.json;
+         const res = await getAttractionsData().then((res) => {
+            return res.json();
+         });
+
+         return res;
       } catch (err) {
          console.error(err);
          return rejectWithValue(err);

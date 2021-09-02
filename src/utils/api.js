@@ -4,7 +4,7 @@ function getAttractionsData() {
       redirect: 'follow',
    };
 
-   return fetch('http://localhost:3000/attractions', requestOptions);
+   return fetch('http://localhost:8080/attractions', requestOptions);
 }
 
 export { getAttractionsData };

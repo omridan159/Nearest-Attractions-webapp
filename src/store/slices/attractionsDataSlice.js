@@ -14,7 +14,8 @@ const failedRequestAttractions = (state, action) => {
 export const attractionsDataSlice = createSlice({
    name: 'attractionsData',
    initialState,
-   reducers: {
+   reducers: {},
+   extraReducers: {
       [fetchAttractions.fulfilled]: (state, action) => {
          state.data = action.payload;
          state.error = false;
@@ -23,9 +24,8 @@ export const attractionsDataSlice = createSlice({
          failedRequestAttractions(state, action);
       },
    },
-   extraReducers: {},
 });
 
-export const { updateAttractionsData } = attractionsDataSlice.actions;
+export const {} = attractionsDataSlice.actions;
 
 export default attractionsDataSlice.reducer;

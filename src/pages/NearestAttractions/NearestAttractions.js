@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import './NearestAttractions.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Table from '../../components/Table/Table';
 import GoogleMaps from '../../components/GoogleMap/GoogleMap';
 import { calculateDistance } from '../../utils/helpers';
+import { fetchAttractions } from '../../store/actions/attractions';
 
 const NearestAttractions = (props) => {
+   const dispatch = useDispatch();
+
    const [nearestAttractions, setNearestAttractions] = useState(null);
 
    const userLocation = useMemo(() => {
