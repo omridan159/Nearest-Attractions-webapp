@@ -15,17 +15,17 @@ const NearestAttractions = (props) => {
       return { lat: props.location.state?.lat, lng: props.location.state?.lng };
    }, [props.location.state]);
 
-   const { data, isDataLoading } = useSelector(
-      (state) => state.attractionsData
+   const { attractions, isDataLoading } = useSelector(
+      (state) => state.attractionsSlice
    );
 
    useEffect(() => {
       dispatch(fetchAttractions());
-   }, []);
+   }, [dispatch]);
 
    useEffect(() => {
       if (!isDataLoading) {
-         const mapAttractions = data.map((attractions) => {
+         const mapAttractions = attractions.map((attractions) => {
             return {
                ...attractions,
                Distance: calculateDistance(
@@ -39,7 +39,7 @@ const NearestAttractions = (props) => {
 
          setNearestAttractions(mapAttractions);
       }
-   }, [data]);
+   }, [attractions, isDataLoading, userLocation.lat, userLocation.lng]);
 
    return (
       <>
@@ -51,7 +51,7 @@ const NearestAttractions = (props) => {
                <div className='box'>
                   <Table data={nearestAttractions || []} />
                   <h1 className='header'>מפת אטרקציות</h1>
-                  <GoogleMaps data={data} />
+                  <GoogleMaps data={attractions} />
                </div>
             </div>
          )}

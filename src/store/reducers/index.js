@@ -1,7 +1,7 @@
-import attractionsDataSlice from '../slices/attractionsDataSlice';
+import attractionsSlice from '../slices/attractionsSlice';
 
 const rootReducer = {
-    attractionsData: attractionsDataSlice,
+    attractionsSlice,
 };
 
 export default rootReducer;

@@ -1,9 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { attractionsData } from '../../constants/Attractions';
 import { fetchAttractions } from '../actions/attractions';
 
 const initialState = {
-   data: [],
+   attractions: [],
    isDataLoading: true,
    error: null,
 };
@@ -13,13 +12,13 @@ const failedRequestAttractions = (state, action) => {
    state.error = action.payload;
 };
 
-export const attractionsDataSlice = createSlice({
-   name: 'attractionsData',
+export const attractionsSlice = createSlice({
+   name: 'attractionsSlice',
    initialState,
    reducers: {},
    extraReducers: {
       [fetchAttractions.fulfilled]: (state, action) => {
-         state.data = action.payload;
+         state.attractions = action.payload;
          state.isDataLoading = false;
          state.error = false;
       },
@@ -29,6 +28,6 @@ export const attractionsDataSlice = createSlice({
    },
 });
 
-export const {} = attractionsDataSlice.actions;
+export const {} = attractionsSlice.actions;
 
-export default attractionsDataSlice.reducer;
+export default attractionsSlice.reducer;
