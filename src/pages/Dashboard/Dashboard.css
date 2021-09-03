@@ -1,13 +1,6 @@
-.coordinates-container {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-}
-
 .coordinates-content {
    margin: auto;
-   width: 20vw;
+   width: 25vw;
    font-weight: 500;
    font-size: 1.5em;
    font-size: medium;
@@ -24,9 +17,8 @@
    margin: 0;
    padding: 5px 12px;
    height: 5vw;
-   width: 15vw;
+   width: 14vw;
    outline: none;
-   display: flex;
    justify-content: center;
    align-items: center;
    cursor: pointer;
@@ -67,7 +59,7 @@
 }
 
 .btn-find-attractions {
-   width: 25vw;
+   width: 30vw;
 }
 
 @media only screen and (max-width: 600px) {

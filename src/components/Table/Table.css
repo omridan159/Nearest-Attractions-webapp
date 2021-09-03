@@ -15,16 +15,16 @@
 }
 
 .radio-label {
-   display: flex;
    cursor: pointer;
-   font-weight: 500;
+   font-weight: 550;
+   color: #686868;
    position: relative;
    overflow: hidden;
    margin-bottom: 0.375em;
 }
 .radio-label input {
    position: absolute;
-   left: -9999px;
+   left: 9999px;
 }
 .radio-label input:checked + span {
    background-color: #d6d6e5;
@@ -35,7 +35,7 @@
 .radio-label span {
    display: flex;
    align-items: center;
-   padding: 0.375em 0.75em 0.375em 0.375em;
+   padding: 0.375em 0.85em 0.375em 0.375em;
    border-radius: 99em;
    transition: 0.25s ease;
 }
@@ -43,14 +43,12 @@
    background-color: #d6d6e5;
 }
 .radio-label span:before {
-   display: flex;
-   flex-shrink: 0;
    content: '';
    background-color: #fff;
    width: 1.5em;
    height: 1.5em;
    border-radius: 50%;
-   margin-right: 0.375em;
+   margin-left: 0.475em;
    transition: 0.25s ease;
    box-shadow: inset 0 0 0 0.125em #00005c;
 }
@@ -61,8 +59,17 @@
    right: 0;
    bottom: 0;
    width: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
    padding: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+   .radio-label {
+      font-size: 4.2vw;
+   }
+
+   .radio-wrapper {
+      flex-basis: 100%;
+      height: 10vw;
+      width: 20vw;
+   }
 }

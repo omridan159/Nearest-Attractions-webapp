@@ -5,6 +5,7 @@ import Table from '../../components/Table/Table';
 import GoogleMaps from '../../components/GoogleMap/GoogleMap';
 import { calculateDistance } from '../../utils/helpers';
 import { fetchAttractions } from '../../store/actions/attractions';
+import Loader from '../../components/shared/Loader/Loader';
 
 const NearestAttractions = (props) => {
    const dispatch = useDispatch();
@@ -44,7 +45,7 @@ const NearestAttractions = (props) => {
    return (
       <>
          {isDataLoading ? (
-            <span>Loading...</span>
+            <Loader />
          ) : (
             <div>
                <h1 className='header'>טבלת מיקומים קרובים</h1>

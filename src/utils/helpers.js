@@ -26,7 +26,9 @@ const getAttractionTypesList = (data) => {
       return attraction.Attraction_Type;
    });
    mapAttractionTypes.push('הכל');
+
    const attractionTypes = [...new Set(mapAttractionTypes)];
+
    return attractionTypes;
 };
 

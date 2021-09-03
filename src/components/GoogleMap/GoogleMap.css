@@ -1,11 +1,18 @@
 .gmap-wrapper {
    margin-top: 5vw;
    margin-bottom: 5vw;
-   height: 40vw;
+   height: 50vh;
    width: 60vw;
    background: #f2f2f2;
    overflow: hidden;
    border-radius: 20px;
    cursor: pointer;
    box-shadow: 0 0 20px 8px #d0d0d0;
+}
+
+@media only screen and (max-width: 600px) {
+   .gmap-wrapper {
+      height: 50vh;
+      width: 80vw;
+   }
 }

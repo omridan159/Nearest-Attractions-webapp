@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import './Table.css';
-import { useDispatch } from 'react-redux';
 import '@inovua/reactdatagrid-enterprise/index.css';
 import '@inovua/reactdatagrid-enterprise/theme/default-dark.css';
 import ReactDataGrid from '@inovua/reactdatagrid-enterprise';
@@ -15,9 +14,7 @@ const Table = ({ data }) => {
    const [attractionType, setAttractionType] = useState(null);
    const [filteredAttractions, setFilteredAttractions] = useState(null);
 
-   const dispatch = useDispatch();
-
-/*    const onEditComplete = ({ value, columnId, rowIndex, data }) => {
+   /*    const onEditComplete = ({ value, columnId, rowIndex, data }) => {
       const key = data._id;
       dispatch(updateAttractionsData({ value, columnId, key }));
    }; */
@@ -52,7 +49,7 @@ const Table = ({ data }) => {
             <div onChange={handleRadio} className='radio-form'>
                {attractionsTypeList.map((attraction) => {
                   return (
-                     <div className='radio-wrapper' key={attraction}>
+                     <div className='radio-wrapper' key={attraction} dir='rtl'>
                         <label className='radio-label'>
                            <input
                               type='radio'

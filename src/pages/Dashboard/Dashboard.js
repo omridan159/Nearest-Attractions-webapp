@@ -29,14 +29,14 @@ const Dashboard = () => {
    };
 
    return (
-      <div className='coordinates-container'>
+      <div>
          <button onClick={getLocation} className='btn-shine'>
             <span>הצג מיקום</span>
          </button>
 
-         <h1>Coordinates</h1>
+         <h2>נתוני המיקום שלך</h2>
          {lng ? (
-            <div className='coordinates-container'>
+            <div>
                <div className='coordinates-content'>
                   <p>{status}</p>
                   {lat && <p>Latitude: {lat}</p>}
