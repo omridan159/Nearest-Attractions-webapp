@@ -30,6 +30,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2HgSpdO',
       X: 34.895464,
       Y: 31.601631,
+      favorite: false,
    },
    {
       _id: 2,
@@ -63,6 +64,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2EBURbF',
       X: 35.651235,
       Y: 33.24757,
+      favorite: false,
    },
    {
       _id: 3,
@@ -95,6 +97,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2XFBojc',
       X: 35.184692,
       Y: 32.585379,
+      favorite: false,
    },
    {
       _id: 4,
@@ -126,6 +129,7 @@ const attractionsData = [
       URL: 'https://www.tel-aviv.gov.il/Visitors/Beaches/Pages/Frishman.aspx',
       X: 34.7689713,
       Y: 32.080027,
+      favorite: false,
    },
    {
       _id: 5,
@@ -157,6 +161,7 @@ const attractionsData = [
       URL: 'https://www.tel-aviv.gov.il/Visitors/Beaches/Pages/TelBaruch.aspx',
       X: 34.7870104,
       Y: 32.1228155,
+      favorite: false,
    },
    {
       _id: 6,
@@ -189,6 +194,7 @@ const attractionsData = [
       URL: 'http://ellavalley.com/en/',
       X: 34.978886,
       Y: 31.687876,
+      favorite: false,
    },
    {
       _id: 7,
@@ -220,6 +226,7 @@ const attractionsData = [
       URL: 'http://www.zion-winery.com/',
       X: 35.3417952,
       Y: 31.7884169,
+      favorite: false,
    },
    {
       _id: 8,
@@ -251,6 +258,7 @@ const attractionsData = [
       URL: 'http://www.carmelwines.co.il/',
       X: 34.9589951,
       Y: 32.573924,
+      favorite: false,
    },
    {
       _id: 9,
@@ -282,6 +290,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2jVbFnM',
       X: 35.2995685,
       Y: 32.9736987,
+      favorite: false,
    },
    {
       _id: 10,
@@ -313,6 +322,7 @@ const attractionsData = [
       URL: 'https://www.mapa.co.il/listing/גן-הפסלים-בקיבוץ-דליה/',
       X: 35.06786357,
       Y: 32.58718383,
+      favorite: false,
    },
    {
       _id: 11,
@@ -345,6 +355,7 @@ const attractionsData = [
       URL: 'https://www.enjoyingisrael.com/attractions/5747/kaukab-abu-al-hija-sculpture-park',
       X: 35.245417,
       Y: 32.828058,
+      favorite: false,
    },
    {
       _id: 12,
@@ -376,6 +387,7 @@ const attractionsData = [
       URL: 'http://ein-hod.info/malbin-sculpture/ursula.htm',
       X: 34.9796643,
       Y: 32.81584296,
+      favorite: false,
    },
    {
       _id: 13,
@@ -407,6 +419,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2lTWqMs',
       X: 35.228542,
       Y: 33.0539,
+      favorite: false,
    },
    {
       _id: 14,
@@ -438,6 +451,7 @@ const attractionsData = [
       URL: 'https://www.enjoyingisrael.com/attractions/5768/seadim-ruins',
       X: 35.13022609,
       Y: 31.75075662,
+      favorite: false,
    },
    {
       _id: 15,
@@ -469,6 +483,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2kjp3SV',
       X: 35.0305546,
       Y: 32.8040947,
+      favorite: false,
    },
    {
       _id: 16,
@@ -500,6 +515,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2lCYvMw',
       X: 34.668606,
       Y: 31.785614,
+      favorite: false,
    },
    {
       _id: 17,
@@ -533,6 +549,7 @@ const attractionsData = [
       URL: 'https://bit.ly/33cPrhU',
       X: 35.450768,
       Y: 32.50459,
+      favorite: false,
    },
    {
       _id: 18,
@@ -565,6 +582,7 @@ const attractionsData = [
       URL: 'http://www.haifazoo.co.il',
       X: 34.98565428,
       Y: 32.80740008,
+      favorite: false,
    },
    {
       _id: 19,
@@ -597,6 +615,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2p1LjTH',
       X: 34.793703,
       Y: 32.011642,
+      favorite: false,
    },
    {
       _id: 20,
@@ -628,6 +647,7 @@ const attractionsData = [
       URL: 'http://bit.ly/2mf0uCX',
       X: 34.919663,
       Y: 31.860013,
+      favorite: false,
    },
    {
       _id: 21,
@@ -660,6 +680,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2NIRu7b',
       X: 35.500348,
       Y: 32.501333,
+      favorite: false,
    },
    {
       _id: 30,
@@ -692,6 +713,7 @@ const attractionsData = [
       URL: 'https://www.seetheholyland.net/church-of-st-anne/',
       X: 35.236074,
       Y: 31.78113,
+      favorite: false,
    },
    {
       _id: 22,
@@ -724,6 +746,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2XDkh1z',
       X: 35.241682,
       Y: 31.665741,
+      favorite: false,
    },
    {
       _id: 23,
@@ -756,6 +779,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2lVgyy0',
       X: 35.578344,
       Y: 32.883107,
+      favorite: false,
    },
    {
       _id: 24,
@@ -788,6 +812,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2nvMqdf',
       X: 35.650356,
       Y: 32.826163,
+      favorite: false,
    },
    {
       _id: 25,
@@ -820,6 +845,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2vYICC1',
       X: 35.498566,
       Y: 32.824503,
+      favorite: false,
    },
    {
       _id: 26,
@@ -852,6 +878,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2SMevqD',
       X: 35.387773,
       Y: 31.466637,
+      favorite: false,
    },
    {
       _id: 27,
@@ -884,6 +911,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2lkn2GG',
       X: 34.489392,
       Y: 31.308486,
+      favorite: false,
    },
    {
       _id: 28,
@@ -916,6 +944,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2kwl05R',
       X: 35.415324,
       Y: 33.044006,
+      favorite: false,
    },
    {
       _id: 29,
@@ -948,6 +977,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2SP1o8h',
       X: 35.564977,
       Y: 32.912249,
+      favorite: false,
    },
    {
       _id: 31,
@@ -980,6 +1010,7 @@ const attractionsData = [
       URL: 'https://www.tripadvisor.co.il/Attraction_Review-g488156-d1754515-Reviews-Church_of_the_Visitation-Ein_Kerem_Jerusalem_District.html',
       X: 35.1594527,
       Y: 31.7647091,
+      favorite: false,
    },
    {
       _id: 32,
@@ -1012,6 +1043,7 @@ const attractionsData = [
       URL: 'http://bit.ly/2mVPhHs',
       X: 35.230823,
       Y: 31.7787993,
+      favorite: false,
    },
    {
       _id: 33,
@@ -1044,6 +1076,7 @@ const attractionsData = [
       URL: 'http://www.jerusalem-mission.org/convent_magdalene.html',
       X: 35.2394866,
       Y: 31.7788807,
+      favorite: false,
    },
    {
       _id: 34,
@@ -1077,6 +1110,7 @@ const attractionsData = [
       URL: 'https://www.seetheholyland.net/tag/syriac-orthodox/',
       X: 35.2278448,
       Y: 31.777203,
+      favorite: false,
    },
    {
       _id: 35,
@@ -1109,6 +1143,7 @@ const attractionsData = [
       URL: 'https://www.newyorker.com/magazine/2013/10/21/lydda-1948',
       X: 34.8972506,
       Y: 31.9530402,
+      favorite: false,
    },
    {
       _id: 36,
@@ -1141,6 +1176,7 @@ const attractionsData = [
       URL: 'https://www.safed.co.il/Synagogues/Ari_Sepharadi.html',
       X: 35.4926842,
       Y: 32.968107,
+      favorite: false,
    },
    {
       _id: 37,
@@ -1172,6 +1208,7 @@ const attractionsData = [
       URL: 'http://www.pekiin.org.il/',
       X: 35.3379837,
       Y: 32.9762125,
+      favorite: false,
    },
    {
       _id: 38,
@@ -1204,6 +1241,7 @@ const attractionsData = [
       URL: 'https://www.court.gov.il',
       X: 35.2060211,
       Y: 31.7810317,
+      favorite: false,
    },
    {
       _id: 39,
@@ -1235,6 +1273,7 @@ const attractionsData = [
       URL: 'https://mountofolives.co.il/he/',
       X: 35.2544531,
       Y: 31.7779492,
+      favorite: false,
    },
    {
       _id: 40,
@@ -1267,6 +1306,7 @@ const attractionsData = [
       URL: 'https://bit.ly/2tzvwha',
       X: 34.772222,
       Y: 32.0756351,
+      favorite: false,
    },
 ];
 

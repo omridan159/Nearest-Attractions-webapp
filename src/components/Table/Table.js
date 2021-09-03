@@ -8,7 +8,12 @@ import {
    filterAttractionsByType,
 } from '../../utils/helpers';
 // import { updateAttractionsData } from '../../store/slices/attractionsDataSlice';
-import { gridStyle, columns, defaultSortInfo } from '../../constants/Table';
+import {
+   gridStyle,
+   columns,
+   defaultSortInfo,
+   checkboxColumn,
+} from '../../constants/Table';
 
 const Table = ({ data }) => {
    const [attractionType, setAttractionType] = useState(null);
@@ -67,11 +72,13 @@ const Table = ({ data }) => {
          </div>
 
          <ReactDataGrid
-            idProperty='id'
+            idProperty='_id'
             // onEditComplete={onEditComplete}
             rtl={true}
             columns={columns}
             defaultSortInfo={defaultSortInfo}
+            checkboxColumn={checkboxColumn}
+            checkboxOnlyRowSelect={true}
             dataSource={filteredAttractions ? filteredAttractions : data}
             theme={'default-dark'}
             style={gridStyle}

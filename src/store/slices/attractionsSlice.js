@@ -1,5 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { fetchAttractions } from '../actions/attractions';
+import { createSlice, current } from '@reduxjs/toolkit';
+import {
+   fetchAttractions,
+   updateAttractionFavoriteStatus,
+} from '../actions/attractions';
 
 const initialState = {
    attractions: [],
@@ -23,6 +26,19 @@ export const attractionsSlice = createSlice({
          state.error = false;
       },
       [fetchAttractions.rejected]: (state, action) => {
+         failedRequestAttractions(state, action);
+      },
+      [updateAttractionFavoriteStatus.fulfilled]: (state, action) => {
+         const index = action.payload.id - 1;
+         const status = action.payload.favoriteStatus;
+         console.log(action.payload.favoriteStatus);
+         state.attractions[index]['favorite'] = status;
+         state.isDataLoading = false;
+      },
+      [updateAttractionFavoriteStatus.pending]: (state, action) => {
+         state.isDataLoading = true;
+      },
+      [updateAttractionFavoriteStatus.rejected]: (state, action) => {
          failedRequestAttractions(state, action);
       },
    },

@@ -1,11 +1,34 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getAttractionsData } from '../../utils/api';
+import {
+   getAttractionsData,
+   updateOneAttractionFavoriteStatus,
+} from '../../utils/api';
 
 export const fetchAttractions = createAsyncThunk(
    'attractions/fetchAttractions',
    async (_, { rejectWithValue }) => {
       try {
          const res = await getAttractionsData().then((res) => {
+            return res.json();
+         });
+
+         return res;
+      } catch (err) {
+         console.error(err);
+         return rejectWithValue(err);
+      }
+   }
+);
+
+export const updateAttractionFavoriteStatus = createAsyncThunk(
+   'attractions/updateAttractionFavoriteStatus',
+   async (params, { rejectWithValue }) => {
+      try {
+         const { id, favoriteStatus } = params;
+         const res = await updateOneAttractionFavoriteStatus(
+            id,
+            favoriteStatus
+         ).then((res) => {
             return res.json();
          });
 

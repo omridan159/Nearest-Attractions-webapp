@@ -1,8 +1,47 @@
+import { store } from '../store/store';
+import { updateAttractionFavoriteStatus } from '../store/actions/attractions';
+
 const defaultSortInfo = { name: 'Distance', dir: -1, type: 'number' };
 
 const gridStyle = {
    minHeight: 400,
    maxHeight: 500,
+};
+
+const checkboxColumn = {
+   renderCheckbox: (checkboxProps, cellProps) => {
+      const { onChange, checked } = checkboxProps;
+
+      const background = !checked ? '#313943' : '#7986cb';
+      const border =
+         checked === false ? '2px solid #7C8792' : '2px solid #7986CB';
+
+      return (
+         <div
+            style={{
+               cursor: 'pointer',
+               background,
+               borderRadius: '50%',
+               height: '24px',
+               width: '24px',
+               display: 'flex',
+               alignItems: 'center',
+               justifyContent: 'center',
+               border,
+               fontSize: 12,
+               color: checked === false ? 'inherit' : '#E8E8E8',
+            }}
+            onClick={(e) => {
+               const id = cellProps.data._id;
+               const params = { id, favoriteStatus: Boolean(checked) };
+               store.dispatch(updateAttractionFavoriteStatus(params));
+               onChange(!checked);
+            }}
+         >
+            {checked === false ? 'O' : checked === true ? 'X' : '--'}
+         </div>
+      );
+   },
 };
 
 const columns = [
@@ -64,4 +103,4 @@ const columns = [
    },
 ];
 
-export { defaultSortInfo, columns, gridStyle };
+export { checkboxColumn, defaultSortInfo, columns, gridStyle };
