@@ -14,7 +14,7 @@ const checkboxColumn = {
 
       const background = !checked ? '#313943' : '#7986cb';
       const border =
-         checked === false ? '2px solid #7C8792' : '2px solid #7986CB';
+         checked === false ? '2px solid #7C8792' : checked === true ? '2px solid #7986CB' : '';
 
       return (
          <div
@@ -32,13 +32,15 @@ const checkboxColumn = {
                color: checked === false ? 'inherit' : '#E8E8E8',
             }}
             onClick={(e) => {
-               const id = cellProps.data._id;
-               const params = { id, favoriteStatus: Boolean(checked) };
-               store.dispatch(updateAttractionFavoriteStatus(params));
-               onChange(!checked);
+               if (!Array.isArray(cellProps.data)) {
+                  const id = cellProps.data._id;
+                  const params = { id, favoriteStatus: !checked };
+                  store.dispatch(updateAttractionFavoriteStatus(params));
+                  onChange(!checked);
+               }
             }}
          >
-            {checked === false ? 'O' : checked === true ? 'X' : '--'}
+            {checked === false ? '✰' : checked === true ? '⭐' : ''}
          </div>
       );
    },

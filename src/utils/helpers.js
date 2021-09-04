@@ -32,6 +32,18 @@ const getAttractionTypesList = (data) => {
    return attractionTypes;
 };
 
+const getUnfavoriteAttractionsList = (data) => {
+   let unfavoriteObject = {};
+
+   data.map((attraction, index) => {
+      if (attraction.favorite === false) {
+         unfavoriteObject[index + 1] = !attraction.favorite;
+      }
+   });
+
+   return unfavoriteObject;
+};
+
 function filterAttractionsByType(attractionType, data) {
    return attractionType === 'הכל'
       ? data
@@ -40,4 +52,9 @@ function filterAttractionsByType(attractionType, data) {
         });
 }
 
-export { calculateDistance, getAttractionTypesList, filterAttractionsByType };
+export {
+   calculateDistance,
+   getAttractionTypesList,
+   filterAttractionsByType,
+   getUnfavoriteAttractionsList,
+};

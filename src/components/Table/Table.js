@@ -6,6 +6,7 @@ import ReactDataGrid from '@inovua/reactdatagrid-enterprise';
 import {
    getAttractionTypesList,
    filterAttractionsByType,
+   getUnfavoriteAttractionsList,
 } from '../../utils/helpers';
 // import { updateAttractionsData } from '../../store/slices/attractionsDataSlice';
 import {
@@ -15,7 +16,7 @@ import {
    checkboxColumn,
 } from '../../constants/Table';
 
-const Table = ({ data }) => {
+const Table = ({ data,unfavoriteAttractions }) => {
    const [attractionType, setAttractionType] = useState(null);
    const [filteredAttractions, setFilteredAttractions] = useState(null);
 
@@ -79,6 +80,8 @@ const Table = ({ data }) => {
             defaultSortInfo={defaultSortInfo}
             checkboxColumn={checkboxColumn}
             checkboxOnlyRowSelect={true}
+            defaultSelected={true}
+            defaultUnselected={unfavoriteAttractions}
             dataSource={filteredAttractions ? filteredAttractions : data}
             theme={'default-dark'}
             style={gridStyle}

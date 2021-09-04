@@ -6,6 +6,7 @@ import {
 
 const initialState = {
    attractions: [],
+   unfavoriteAttractions: {},
    isDataLoading: true,
    error: null,
 };
@@ -21,7 +22,8 @@ export const attractionsSlice = createSlice({
    reducers: {},
    extraReducers: {
       [fetchAttractions.fulfilled]: (state, action) => {
-         state.attractions = action.payload;
+         state.attractions = action.payload.data;
+         state.unfavoriteAttractions = action.payload.unfavoriteAttractions;
          state.isDataLoading = false;
          state.error = false;
       },
@@ -31,13 +33,9 @@ export const attractionsSlice = createSlice({
       [updateAttractionFavoriteStatus.fulfilled]: (state, action) => {
          const index = action.payload.id - 1;
          const status = action.payload.favoriteStatus;
-         console.log(action.payload.favoriteStatus);
          state.attractions[index]['favorite'] = status;
-         state.isDataLoading = false;
       },
-      [updateAttractionFavoriteStatus.pending]: (state, action) => {
-         state.isDataLoading = true;
-      },
+      [updateAttractionFavoriteStatus.pending]: (state, action) => {},
       [updateAttractionFavoriteStatus.rejected]: (state, action) => {
          failedRequestAttractions(state, action);
       },

@@ -16,7 +16,7 @@ const NearestAttractions = (props) => {
       return { lat: props.location.state?.lat, lng: props.location.state?.lng };
    }, [props.location.state]);
 
-   const { attractions, isDataLoading } = useSelector(
+   const { attractions, unfavoriteAttractions, isDataLoading } = useSelector(
       (state) => state.attractionsSlice
    );
 
@@ -50,7 +50,10 @@ const NearestAttractions = (props) => {
             <div>
                <h1 className='header'>טבלת מיקומים קרובים</h1>
                <div className='box'>
-                  <Table data={nearestAttractions || []} />
+                  <Table
+                     data={nearestAttractions || []}
+                     unfavoriteAttractions={unfavoriteAttractions}
+                  />
                   <h1 className='header'>מפת אטרקציות</h1>
                   <GoogleMaps data={attractions} />
                </div>

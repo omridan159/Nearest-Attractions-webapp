@@ -683,7 +683,7 @@ const attractionsData = [
       favorite: false,
    },
    {
-      _id: 30,
+      _id: 22,
       Id: 6052,
       Name: 'כנסיית אנה',
       ShortDescription:
@@ -716,7 +716,7 @@ const attractionsData = [
       favorite: false,
    },
    {
-      _id: 22,
+      _id: 23,
       Id: 5917,
       Name: 'פארק הרודיון',
       ShortDescription:
@@ -749,7 +749,7 @@ const attractionsData = [
       favorite: false,
    },
    {
-      _id: 23,
+      _id: 24,
       Id: 5924,
       Name: 'גן לאומי כפר נחום',
       ShortDescription:
@@ -782,7 +782,7 @@ const attractionsData = [
       favorite: false,
    },
    {
-      _id: 24,
+      _id: 25,
       Id: 5927,
       Name: 'גן לאומי כורסי',
       ShortDescription:
@@ -815,7 +815,7 @@ const attractionsData = [
       favorite: false,
    },
    {
-      _id: 25,
+      _id: 26,
       Id: 5947,
       Name: 'גן לאומי ומשמורת טבע ארבל',
       ShortDescription:
@@ -848,7 +848,7 @@ const attractionsData = [
       favorite: false,
    },
    {
-      _id: 26,
+      _id: 27,
       Id: 5979,
       Name: 'שמורת טבע עין גדי',
       ShortDescription:
@@ -881,7 +881,7 @@ const attractionsData = [
       favorite: false,
    },
    {
-      _id: 27,
+      _id: 28,
       Id: 5983,
       Name: 'גן לאומי הבשור - פארק אשכול',
       ShortDescription:
@@ -914,7 +914,7 @@ const attractionsData = [
       favorite: false,
    },
    {
-      _id: 28,
+      _id: 29,
       Id: 5996,
       Name: 'גן לאומי ברעם',
       ShortDescription:
@@ -947,7 +947,7 @@ const attractionsData = [
       favorite: false,
    },
    {
-      _id: 29,
+      _id: 30,
       Id: 6031,
       Name: 'גן לאומי כורזים',
       ShortDescription:

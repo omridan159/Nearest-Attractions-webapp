@@ -15,6 +15,7 @@
 }
 
 .radio-label {
+   display: flex;
    cursor: pointer;
    font-weight: 550;
    color: #686868;
@@ -43,6 +44,8 @@
    background-color: #d6d6e5;
 }
 .radio-label span:before {
+   display: flex;
+   flex-shrink: 0;
    content: '';
    background-color: #fff;
    width: 1.5em;
