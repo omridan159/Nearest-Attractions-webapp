@@ -3,7 +3,7 @@ import './Loader.css';
 
 const Loader = () => {
    return (
-      <div id='container'>
+      <div id='loader-wrapper'>
          <div className='divider' aria-hidden='true'></div>
          <p className='loading-text' aria-label='Loading'>
             <span className='letter' aria-hidden='true'>

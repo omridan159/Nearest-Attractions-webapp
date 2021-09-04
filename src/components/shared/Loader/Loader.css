@@ -5,7 +5,7 @@
  *::before, *::after {
 	 box-sizing: border-box;
 }
- #container {
+ #loader-wrapper {
 	 position: relative;
 	 transform: scale(0.725);
 }
@@ -122,12 +122,12 @@
 	}
 }
  @media (min-width: 48rem) {
-	 #container {
+	 #loader-wrapper {
 		 transform: scale(0.725rem);
 	}
 }
  @media (min-width: 62rem) {
-	 #container {
+	 #loader-wrapper {
 		 transform: scale(0.85);
 	}
 }

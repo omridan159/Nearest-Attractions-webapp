@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import TEXT from '../../locales/hebrew';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -31,10 +32,10 @@ const Dashboard = () => {
    return (
       <div>
          <button onClick={getLocation} className='btn-shine'>
-            <span>הצג מיקום</span>
+            <span>{TEXT['dashboard.header-show-coordinates']}</span>
          </button>
 
-         <h2>נתוני המיקום שלך</h2>
+         <h2>{TEXT['dashboard.header-your-coordinates']}</h2>
          {lng ? (
             <div>
                <div className='coordinates-content'>
@@ -55,7 +56,7 @@ const Dashboard = () => {
                }}
             >
                <button className='btn-shine btn-find-attractions'>
-                  <span>מצא אטרקציות בסביבתי</span>
+                  <span>{TEXT['dashboard.header-find-attractions']}</span>
                </button>
             </Link>
          ) : (

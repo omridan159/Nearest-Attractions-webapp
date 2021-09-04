@@ -1,4 +1,4 @@
-import { createSlice, current } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import {
    fetchAttractions,
    updateAttractionFavoriteStatus,
@@ -41,7 +41,5 @@ export const attractionsSlice = createSlice({
       },
    },
 });
-
-export const {} = attractionsSlice.actions;
 
 export default attractionsSlice.reducer;

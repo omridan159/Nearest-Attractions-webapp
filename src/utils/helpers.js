@@ -21,7 +21,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
    return d;
 }
 
-const getAttractionTypesList = (data) => {
+function getAttractionTypesList (data) {
    const mapAttractionTypes = data.map((attraction) => {
       return attraction.Attraction_Type;
    });
@@ -30,18 +30,6 @@ const getAttractionTypesList = (data) => {
    const attractionTypes = [...new Set(mapAttractionTypes)];
 
    return attractionTypes;
-};
-
-const getUnfavoriteAttractionsList = (data) => {
-   let unfavoriteObject = {};
-
-   data.map((attraction, index) => {
-      if (attraction.favorite === false) {
-         unfavoriteObject[index + 1] = !attraction.favorite;
-      }
-   });
-
-   return unfavoriteObject;
 };
 
 function filterAttractionsByType(attractionType, data) {
@@ -56,5 +44,4 @@ export {
    calculateDistance,
    getAttractionTypesList,
    filterAttractionsByType,
-   getUnfavoriteAttractionsList,
 };

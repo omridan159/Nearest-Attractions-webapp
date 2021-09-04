@@ -1,14 +1,13 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import './Table.css';
 import '@inovua/reactdatagrid-enterprise/index.css';
 import '@inovua/reactdatagrid-enterprise/theme/default-dark.css';
 import ReactDataGrid from '@inovua/reactdatagrid-enterprise';
+import RadioForm from '../RadioForm/RadioForm';
 import {
    getAttractionTypesList,
    filterAttractionsByType,
-   getUnfavoriteAttractionsList,
 } from '../../utils/helpers';
-// import { updateAttractionsData } from '../../store/slices/attractionsDataSlice';
 import {
    gridStyle,
    columns,
@@ -16,65 +15,62 @@ import {
    checkboxColumn,
 } from '../../constants/Table';
 
-const Table = ({ data,unfavoriteAttractions }) => {
-   const [attractionType, setAttractionType] = useState(null);
+const Table = ({ data, unfavoriteAttractions }) => {
+   const [gridRef, setGridRef] = useState(null);
+   const [width, setWidth] = useState(window.innerWidth);
    const [filteredAttractions, setFilteredAttractions] = useState(null);
+   const [selectedAttractionType, setSelectedAttractionType] = useState(null);
 
-   /*    const onEditComplete = ({ value, columnId, rowIndex, data }) => {
-      const key = data._id;
-      dispatch(updateAttractionsData({ value, columnId, key }));
-   }; */
+   useEffect(() => {
+      function handleResize() {
+         setWidth(window.innerWidth);
+      }
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+   }, [width]);
+
+   const scrollToLeft = () => {
+      return gridRef && gridRef.current.setScrollLeft(900);
+   };
+
+   useEffect(() => {
+      width < 600 && scrollToLeft();
+   }, [width]);
 
    const handleRadio = (e) => {
       const value = e.target.value;
-      setAttractionType(value);
+      setSelectedAttractionType(value);
    };
 
-   const attractionsTypeList = useMemo(() => {
+   const attractionsTypesList = useMemo(() => {
       return getAttractionTypesList(data);
    }, [data]);
 
    useEffect(() => {
-      if (attractionType) {
+      if (selectedAttractionType) {
          const attractionsByType = filterAttractionsByType(
-            attractionType,
+            selectedAttractionType,
             data
          );
 
          const delayTheSerachExecution = setTimeout(() => {
             setFilteredAttractions(attractionsByType);
-         }, 300);
+         }, 200);
 
          return () => clearTimeout(delayTheSerachExecution);
       }
-   }, [attractionType, data]);
+   }, [selectedAttractionType, data]);
 
    return (
       <div className='table-wrapper'>
-         <div className='form-container'>
-            <div onChange={handleRadio} className='radio-form'>
-               {attractionsTypeList.map((attraction) => {
-                  return (
-                     <div className='radio-wrapper' key={attraction} dir='rtl'>
-                        <label className='radio-label'>
-                           <input
-                              type='radio'
-                              readOnly
-                              name={attraction}
-                              value={attraction}
-                              checked={attraction === attractionType}
-                           />
-                           <span>{attraction}</span>
-                        </label>
-                     </div>
-                  );
-               })}
-            </div>
-         </div>
-
+         <RadioForm
+            handleRadio={handleRadio}
+            attractionsTypeList={attractionsTypesList}
+            selectedAttractionType={selectedAttractionType}
+         />
          <ReactDataGrid
+            onReady={setGridRef}
             idProperty='_id'
-            // onEditComplete={onEditComplete}
             rtl={true}
             columns={columns}
             defaultSortInfo={defaultSortInfo}
