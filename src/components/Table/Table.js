@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import ReactDataGrid from '@inovua/reactdatagrid-enterprise';
+import RadioForm from '../RadioForm/RadioForm';
 import './Table.css';
 import '@inovua/reactdatagrid-enterprise/index.css';
 import '@inovua/reactdatagrid-enterprise/theme/default-dark.css';
-import ReactDataGrid from '@inovua/reactdatagrid-enterprise';
-import RadioForm from '../RadioForm/RadioForm';
 import {
    getAttractionTypesList,
    filterAttractionsByType,
@@ -13,29 +13,13 @@ import {
    columns,
    defaultSortInfo,
    checkboxColumn,
-} from '../../constants/Table';
+} from '../../constants/Table-config';
 
 const Table = ({ data, unfavoriteAttractions }) => {
    const [gridRef, setGridRef] = useState(null);
    const [width, setWidth] = useState(window.innerWidth);
    const [filteredAttractions, setFilteredAttractions] = useState(null);
    const [selectedAttractionType, setSelectedAttractionType] = useState(null);
-
-   useEffect(() => {
-      function handleResize() {
-         setWidth(window.innerWidth);
-      }
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-   }, [width]);
-
-   const scrollToLeft = () => {
-      return gridRef && gridRef.current.setScrollLeft(900);
-   };
-
-   useEffect(() => {
-      width < 600 && scrollToLeft();
-   }, [width]);
 
    const handleRadio = (e) => {
       const value = e.target.value;
@@ -60,6 +44,28 @@ const Table = ({ data, unfavoriteAttractions }) => {
          return () => clearTimeout(delayTheSerachExecution);
       }
    }, [selectedAttractionType, data]);
+
+   useEffect(() => {
+      function handleResize() {
+         setWidth(window.innerWidth);
+      }
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+   }, [width]);
+
+   const scrollToLeft = useCallback(() => {
+      return (
+         gridRef &&
+         gridRef.current.smoothScrollTo(900, {
+            orientation: 'horizontal',
+            duration: 500,
+         })
+      );
+   }, [gridRef]);
+
+   useEffect(() => {
+      width < 600 && scrollToLeft();
+   }, [width, scrollToLeft]);
 
    return (
       <div className='table-wrapper'>

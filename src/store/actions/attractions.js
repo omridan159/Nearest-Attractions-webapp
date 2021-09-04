@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
    getAttractionsData,
    updateOneAttractionFavoriteStatus,
-} from '../../utils/api';
+} from '../../api/attractions';
 
 export const fetchAttractions = createAsyncThunk(
    'attractions/fetchAttractions',

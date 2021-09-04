@@ -6,7 +6,7 @@ import {
    options,
    mapCenter,
    libraries,
-} from '../../constants/GoogleMaps';
+} from '../../constants/GoogleMaps-config';
 
 const GoogleMaps = ({ data }) => {
    const { isLoaded, loadError } = useLoadScript({
@@ -26,7 +26,7 @@ const GoogleMaps = ({ data }) => {
             center={mapCenter}
             options={options}
             defaultZoom={7}
-            defaultCenter={{ lat: 31.2540165064844, lng: 34.7907892544368 }}
+            defaultCenter={{ lat: 34.0853, lng: 32.7818 }}
          >
             {data.map((attraction) => (
                <Marker

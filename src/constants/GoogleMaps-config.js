@@ -9,7 +9,7 @@ const options = {
    zoomControl: true,
 };
 
-const mapCenter = { lat: 31.2540165064844, lng: 34.7907892544368 };
+const mapCenter = { lat: 31.854, lng: 36.550 };
 
 const libraries = ['places'];
 

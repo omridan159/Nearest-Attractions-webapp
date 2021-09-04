@@ -8,3 +8,11 @@
    margin-top: 5vw;
 }
 
+.InovuaReactDataGrid__column-header:hover
+   > .InovuaReactDataGrid__column-header__menu-tool {
+   display: none !important;
+}
+
+.InovuaReactDataGrid__column-header__menu-tool {
+   display: none !important;
+}

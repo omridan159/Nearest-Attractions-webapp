@@ -36,7 +36,7 @@ const Dashboard = () => {
          </button>
 
          <h2>{TEXT['dashboard.header-your-coordinates']}</h2>
-         {lng ? (
+         {lng && lat ? (
             <div>
                <div className='coordinates-content'>
                   <p>{status}</p>
@@ -48,7 +48,7 @@ const Dashboard = () => {
             ''
          )}
 
-         {showNearestAttractionsBtn ? (
+         {showNearestAttractionsBtn && (
             <Link
                to={{
                   pathname: `/nearest-attractions`,
@@ -59,8 +59,6 @@ const Dashboard = () => {
                   <span>{TEXT['dashboard.header-find-attractions']}</span>
                </button>
             </Link>
-         ) : (
-            ''
          )}
       </div>
    );
