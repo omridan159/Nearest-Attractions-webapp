@@ -12,6 +12,10 @@
    box-shadow: 0 0 20px 8px #d0d0d0;
 }
 
+.btn-show-coordinates {
+   margin-bottom: 3vw !important;
+}
+
 .btn-shine {
    position: relative;
    margin: 0;
@@ -71,6 +75,7 @@
       width: 50vw;
    }
    .btn-find-attractions {
+      margin-top: 12vw;
       width: 70vw;
    }
 }

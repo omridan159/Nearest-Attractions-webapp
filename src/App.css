@@ -12,15 +12,3 @@ body {
    min-height: 100vh;
    background: #fff;
 }
-
-
-/* Hide the License message from ReactDataGrid library */
-#root
-   > div
-   > div
-   > div
-   > div
-   > div.InovuaReactDataGrid.InovuaReactDataGrid--theme-default-dark.InovuaReactDataGrid--columns-ready.InovuaReactDataGrid--zebra-rows.InovuaReactDataGrid--show-hover-rows.InovuaReactDataGrid--direction-rtl.InovuaReactDataGrid--no-header-border-right.InovuaReactDataGrid--cell-borders-horizontal.InovuaReactDataGrid--cell-borders-vertical
-   > div:nth-child(3) {
-   display: none !important;
-}

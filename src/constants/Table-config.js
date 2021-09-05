@@ -14,7 +14,11 @@ const checkboxColumn = {
 
       const background = !checked ? '#313943' : '#7986cb';
       const border =
-         checked === false ? '2px solid #7C8792' : checked === true ? '2px solid #7986CB' : '';
+         checked === false
+            ? '2px solid #7C8792'
+            : checked === true
+            ? '2px solid #7986CB'
+            : '';
 
       return (
          <div
@@ -48,22 +52,8 @@ const checkboxColumn = {
 
 const columns = [
    {
-      name: '_id',
-      header: 'Key',
-      maxWidth: 70,
-      defaultFlex: 1,
-      sortable: false,
-   },
-   {
       name: 'Id',
       header: 'מזהה אטרקציה',
-      minWidth: 150,
-      defaultFlex: 1,
-      sortable: false,
-   },
-   {
-      name: 'Attraction_Type',
-      header: 'סוג אטרקציה',
       minWidth: 150,
       defaultFlex: 1,
       sortable: false,
@@ -75,6 +65,14 @@ const columns = [
       defaultFlex: 1,
       sortable: false,
    },
+   {
+      name: 'Attraction_Type',
+      header: 'סוג אטרקציה',
+      minWidth: 150,
+      defaultFlex: 1,
+      sortable: false,
+   },
+
    {
       name: 'Address',
       header: 'כתובת',
@@ -93,6 +91,7 @@ const columns = [
       name: 'URL',
       header: 'לינק לאתר',
       minWidth: 150,
+      editable: true,
       defaultFlex: 1,
       sortable: false,
    },

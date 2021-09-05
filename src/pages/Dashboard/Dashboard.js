@@ -31,19 +31,21 @@ const Dashboard = () => {
 
    return (
       <div>
-         <button onClick={getLocation} className='btn-shine'>
+         <button onClick={getLocation} className='btn-shine btn-show-coordinates'>
             <span>{TEXT['dashboard.header-show-coordinates']}</span>
          </button>
 
-         <h2>{TEXT['dashboard.header-your-coordinates']}</h2>
          {lng && lat ? (
-            <div>
-               <div className='coordinates-content'>
-                  <p>{status}</p>
-                  {lat && <p>Latitude: {lat}</p>}
-                  {lng && <p>Longitude: {lng}</p>}
+            <>
+               <h2>{TEXT['dashboard.header-your-coordinates']}</h2>
+               <div>
+                  <div className='coordinates-content'>
+                     <p>{status}</p>
+                     {lat && <p>Latitude: {lat}</p>}
+                     {lng && <p>Longitude: {lng}</p>}
+                  </div>
                </div>
-            </div>
+            </>
          ) : (
             ''
          )}

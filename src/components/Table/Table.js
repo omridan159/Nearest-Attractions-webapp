@@ -64,7 +64,7 @@ const Table = ({ data, unfavoriteAttractions }) => {
    }, [gridRef]);
 
    useEffect(() => {
-      width < 600 && scrollToLeft();
+      width < 1340 && scrollToLeft();
    }, [width, scrollToLeft]);
 
    return (
