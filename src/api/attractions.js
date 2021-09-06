@@ -4,7 +4,7 @@ function getAttractionsData() {
        redirect: 'follow',
     };
  
-    return fetch('http://localhost:8080/attractions', requestOptions);
+    return fetch(`${process.env.API_HOST}/attractions`, requestOptions);
  }
  
  function updateOneAttractionFavoriteStatus(id, status) {
@@ -23,7 +23,7 @@ function getAttractionsData() {
        redirect: 'follow',
     };
  
-    return fetch('http://localhost:8080/attractions', requestOptions);
+    return fetch(`${process.env.API_HOST}/attractions`, requestOptions);
  }
  
  export { getAttractionsData, updateOneAttractionFavoriteStatus };
