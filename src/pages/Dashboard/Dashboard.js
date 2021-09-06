@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Button from '../../components/shared/Button/Button';
+import ShowNearestAttractionsBtn from '../../components/Dashboard/ShowNearestAttractionsBtn/ShowNearestAttractionsBtn';
+import YourCoordinatesCard from '../../components/Dashboard/YourCoordinatesCard/YourCoordinatesCard';
 import TEXT from '../../locales/hebrew';
 import './Dashboard.css';
 
@@ -31,36 +33,20 @@ const Dashboard = () => {
 
    return (
       <div>
-         <button onClick={getLocation} className='btn-shine btn-show-coordinates'>
-            <span>{TEXT['dashboard.header-show-coordinates']}</span>
-         </button>
+         <Button
+            className={'btn-shine btn-show-coordinates'}
+            onClick={getLocation}
+            text={TEXT['dashboard.header-show-coordinates']}
+         />
 
-         {lng && lat ? (
+         {lng && lat && (
             <>
-               <h2>{TEXT['dashboard.header-your-coordinates']}</h2>
-               <div>
-                  <div className='coordinates-content'>
-                     <p>{status}</p>
-                     {lat && <p>Latitude: {lat}</p>}
-                     {lng && <p>Longitude: {lng}</p>}
-                  </div>
-               </div>
+               <YourCoordinatesCard status={status} lat={lat} lng={lng} />
             </>
-         ) : (
-            ''
          )}
 
          {showNearestAttractionsBtn && (
-            <Link
-               to={{
-                  pathname: `/nearest-attractions`,
-                  state: { lat, lng },
-               }}
-            >
-               <button className='btn-shine btn-find-attractions'>
-                  <span>{TEXT['dashboard.header-find-attractions']}</span>
-               </button>
-            </Link>
+            <ShowNearestAttractionsBtn lat={lat} lng={lng} />
          )}
       </div>
    );

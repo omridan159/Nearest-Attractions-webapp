@@ -1,4 +1,4 @@
-export default {
+let hebrew = {
    //Dashboard
    'dashboard.header-your-coordinates': 'נתוני המיקום שלך',
    'dashboard.header-show-coordinates': 'הצג מיקום',
@@ -7,3 +7,5 @@ export default {
    'nearestAttractions.header-attractions-table': 'טבלת מיקומים קרובים',
    'nearestAttractions.header-attractions-map': 'מפת אטרקציות',
 };
+
+export default hebrew;

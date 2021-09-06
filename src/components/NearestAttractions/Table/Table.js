@@ -5,15 +5,15 @@ import './Table.css';
 import '@inovua/reactdatagrid-enterprise/index.css';
 import '@inovua/reactdatagrid-enterprise/theme/default-dark.css';
 import {
-   getAttractionTypesList,
-   filterAttractionsByType,
-} from '../../utils/helpers';
-import {
    gridStyle,
    columns,
    defaultSortInfo,
    checkboxColumn,
-} from '../../constants/Table-config';
+} from '../../../constants/Table-config';
+import {
+   getAttractionsTypes,
+   filterAttractionsByType,
+} from '../../../utils/helpers';
 
 const Table = ({ data, unfavoriteAttractions }) => {
    const [gridRef, setGridRef] = useState(null);
@@ -26,8 +26,8 @@ const Table = ({ data, unfavoriteAttractions }) => {
       setSelectedAttractionType(value);
    };
 
-   const attractionsTypesList = useMemo(() => {
-      return getAttractionTypesList(data);
+   const attractionsTypes = useMemo(() => {
+      return getAttractionsTypes(data);
    }, [data]);
 
    useEffect(() => {
@@ -53,6 +53,7 @@ const Table = ({ data, unfavoriteAttractions }) => {
       return () => window.removeEventListener('resize', handleResize);
    }, [width]);
 
+   //When the screen resizes, scroll to the right side of the table to see the start of it
    const scrollToLeft = useCallback(() => {
       return (
          gridRef &&
@@ -68,10 +69,10 @@ const Table = ({ data, unfavoriteAttractions }) => {
    }, [width, scrollToLeft]);
 
    return (
-      <div className='table-wrapper'>
+      <div className='table-container'>
          <RadioForm
             handleRadio={handleRadio}
-            attractionsTypeList={attractionsTypesList}
+            attractionsTypeList={attractionsTypes}
             selectedAttractionType={selectedAttractionType}
          />
          <ReactDataGrid

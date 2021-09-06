@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import './NearestAttractions.css';
-import TEXT from '../../locales/hebrew';
 import { useSelector, useDispatch } from 'react-redux';
-import Table from '../../components/Table/Table';
-import GoogleMaps from '../../components/GoogleMap/GoogleMap';
+import TEXT from '../../locales/hebrew';
+import Loader from '../../components/shared/Loader/Loader';
+import Table from '../../components/NearestAttractions/Table/Table';
+import GoogleMaps from '../../components/NearestAttractions/GoogleMap/GoogleMap';
 import { calculateDistance } from '../../utils/helpers';
 import { fetchAttractions } from '../../store/actions/attractions';
-import Loader from '../../components/shared/Loader/Loader';
+import './NearestAttractions.css';
 
 const NearestAttractions = (props) => {
    const dispatch = useDispatch();

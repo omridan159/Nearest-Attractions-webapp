@@ -7,11 +7,11 @@ const RadioForm = ({
    selectedAttractionType,
 }) => {
    return (
-      <div className='form-wrapper'>
+      <div className='form-container'>
          <div onChange={handleRadio} className='radio-form'>
             {attractionsTypeList.map((attraction) => {
                return (
-                  <div className='radio-wrapper' key={attraction} dir='rtl'>
+                  <div className='radio-container' key={attraction} dir='rtl'>
                      <label className='radio-label'>
                         <input
                            type='radio'

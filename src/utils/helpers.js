@@ -1,10 +1,10 @@
+// eslint-disable-next-line
 Number.prototype.toRad = function () {
    return (this * Math.PI) / 180;
 };
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
-   var R = 6371; // km
-   //has a problem with the .toRad() method below.
+   var R = 6371;
    var x1 = lat2 - lat1;
    var dLat = x1.toRad();
    var x2 = lon2 - lon1;
@@ -21,7 +21,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
    return d;
 }
 
-function getAttractionTypesList (data) {
+function getAttractionsTypes(data) {
    const mapAttractionTypes = data.map((attraction) => {
       return attraction.Attraction_Type;
    });
@@ -30,18 +30,18 @@ function getAttractionTypesList (data) {
    const attractionTypes = [...new Set(mapAttractionTypes)];
 
    return attractionTypes;
-};
-
-function filterAttractionsByType(attractionType, data) {
-   return attractionType === 'הכל'
-      ? data
-      : data.filter((attraction) => {
-           return attraction.Attraction_Type === attractionType;
-        });
 }
 
-export {
-   calculateDistance,
-   getAttractionTypesList,
-   filterAttractionsByType,
-};
+function filterAttractionsByType(attractionType, data) {
+
+   if (attractionType === 'הכל') {
+      return data;
+   }
+
+   return data.filter((attraction) => {
+      return attraction.Attraction_Type === attractionType;
+   });
+
+}
+
+export { calculateDistance, getAttractionsTypes, filterAttractionsByType };

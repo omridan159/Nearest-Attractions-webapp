@@ -6,7 +6,7 @@ import {
    options,
    mapCenter,
    libraries,
-} from '../../constants/GoogleMaps-config';
+} from '../../../constants/GoogleMaps-config';
 
 const GoogleMaps = ({ data }) => {
    const { isLoaded, loadError } = useLoadScript({
@@ -18,7 +18,7 @@ const GoogleMaps = ({ data }) => {
    if (!isLoaded) return 'Loading Maps...';
 
    return (
-      <div className='gmap-wrapper'>
+      <div className='gmap-container'>
          <GoogleMap
             id='map'
             mapContainerStyle={mapContainerStyle}

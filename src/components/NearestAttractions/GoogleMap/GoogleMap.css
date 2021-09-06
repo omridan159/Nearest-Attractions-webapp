@@ -1,4 +1,4 @@
-.gmap-wrapper {
+.gmap-container {
    margin-top: 5vw;
    margin-bottom: 5vw;
    height: 50vh;
@@ -11,7 +11,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-   .gmap-wrapper {
+   .gmap-container {
       height: 50vh;
       width: 80vw;
    }
