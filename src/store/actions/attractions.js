@@ -8,9 +8,15 @@ export const fetchAttractions = createAsyncThunk(
    'attractions/fetchAttractions',
    async (_, { rejectWithValue }) => {
       try {
-         const res = await getAttractionsData().then((res) => {
+         const res = await getAttractionsData().then(async (res) => {
+            if (!res.ok) {
+               const err = await res.json();
+               throw err;
+            }
+            return res;
+         }).then((res) => {
             return res.json();
-         });
+         })
 
          return res;
       } catch (err) {
@@ -28,7 +34,13 @@ export const updateAttractionFavoriteStatus = createAsyncThunk(
          const res = await updateOneAttractionFavoriteStatus(
             id,
             favoriteStatus
-         ).then((res) => {
+         ).then(async (res) => {
+            if (!res.ok) {
+               const err = await res.json();
+               throw err;
+            }
+            return res;
+         }).then((res) => {
             return res.json();
          });
 

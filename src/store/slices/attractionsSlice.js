@@ -8,12 +8,14 @@ const initialState = {
    attractions: [],
    unfavoriteAttractions: {},
    isDataLoading: true,
-   error: null,
+   error: false,
+   error_message: null,
 };
 
 const failedRequestAttractions = (state, action) => {
    state.isDataLoading = false;
-   state.error = action.payload;
+   state.error = true;
+   state.error_message = action.payload.message;
 };
 
 export const attractionsSlice = createSlice({

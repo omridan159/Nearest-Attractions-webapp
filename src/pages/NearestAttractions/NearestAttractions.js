@@ -17,9 +17,13 @@ const NearestAttractions = (props) => {
       return { lat: props.location.state?.lat, lng: props.location.state?.lng };
    }, [props.location.state]);
 
-   const { attractions, unfavoriteAttractions, isDataLoading } = useSelector(
-      (state) => state.attractionsSlice
-   );
+   const {
+      attractions,
+      unfavoriteAttractions,
+      isDataLoading,
+      error,
+      error_message,
+   } = useSelector((state) => state.attractionsSlice);
 
    useEffect(() => {
       dispatch(fetchAttractions());
@@ -45,7 +49,9 @@ const NearestAttractions = (props) => {
 
    return (
       <>
-         {isDataLoading ? (
+         {error ? (
+            <h1>{error_message}</h1>
+         ) : isDataLoading ? (
             <Loader />
          ) : (
             <div>
