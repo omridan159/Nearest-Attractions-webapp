@@ -3,7 +3,6 @@ function getAttractionsData() {
       method: 'GET',
       redirect: 'follow',
    };
-   console.log(process.env.REACT_APP_API_URL)
    return fetch(`${process.env.REACT_APP_API_URL}/attractions`, requestOptions);
 }
 
