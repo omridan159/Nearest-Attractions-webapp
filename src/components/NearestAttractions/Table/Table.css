@@ -40,7 +40,7 @@
    > div.inovua-react-scroll-container__container
    > div
    > div:nth-child(1) {
-   transform: translateX(-17px) !important;
+   transform: translateX(-17px);
 }
 
 @media only screen and (max-width: 1500px) {
@@ -53,9 +53,9 @@
       > div.InovuaReactDataGrid__body
       > div.InovuaReactDataGrid__column-layout
       > div.InovuaReactDataGrid__virtual-list.inovua-react-virtual-list.inovua-react-virtual-list--theme-default-dark.inovua-react-virtual-list--virtual-scroll.inovua-react-scroll-container--block.inovua-react-scroll-container.inovua-react-scroll-container--theme-default-dark
-      > div.inovua-react-scroll-container__container
+      > div.inovua-react-scroll-container__wrapper
       > div
       > div:nth-child(1) {
-      transform: translateX(0px) !important;
+      transform: translateX(-0.6px) !important;
    }
 }
