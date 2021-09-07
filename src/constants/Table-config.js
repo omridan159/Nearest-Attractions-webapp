@@ -1,7 +1,7 @@
 import { store } from '../store/store';
 import { updateAttractionFavoriteStatus } from '../store/actions/attractions';
 
-const defaultSortInfo = { name: 'Distance', dir: -1, type: 'number' };
+const defaultSortInfo = { name: 'Distance', dir: 1, type: 'number' };
 
 const gridStyle = {
    minHeight: 400,

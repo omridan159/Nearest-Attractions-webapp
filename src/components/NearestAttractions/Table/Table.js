@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ReactDataGrid from '@inovua/reactdatagrid-enterprise';
 import RadioForm from '../RadioForm/RadioForm';
 import './Table.css';
