@@ -6,6 +6,7 @@ import {
 
 const initialState = {
    attractions: [],
+   attractionsTypes: [],
    unfavoriteAttractions: {},
    isDataLoading: true,
    error: false,
@@ -26,6 +27,7 @@ export const attractionsSlice = createSlice({
       [fetchAttractions.fulfilled]: (state, action) => {
          state.attractions = action.payload.data;
          state.unfavoriteAttractions = action.payload.unfavoriteAttractions;
+         state.attractionsTypes = action.payload.attractionsTypes;
          state.isDataLoading = false;
          state.error = false;
       },

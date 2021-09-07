@@ -19,6 +19,7 @@ const NearestAttractions = (props) => {
 
    const {
       attractions,
+      attractionsTypes,
       unfavoriteAttractions,
       isDataLoading,
       error,
@@ -61,6 +62,7 @@ const NearestAttractions = (props) => {
                <div className='box'>
                   <Table
                      data={nearestAttractions || []}
+                     attractionsTypes={attractionsTypes}
                      unfavoriteAttractions={unfavoriteAttractions}
                   />
                   <h1 className='header'>

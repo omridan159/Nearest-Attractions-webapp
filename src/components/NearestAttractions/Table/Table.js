@@ -10,12 +10,9 @@ import {
    defaultSortInfo,
    checkboxColumn,
 } from '../../../constants/Table-config';
-import {
-   getAttractionsTypes,
-   filterAttractionsByType,
-} from '../../../utils/helpers';
+import { filterAttractionsByType } from '../../../utils/helpers';
 
-const Table = ({ data, unfavoriteAttractions }) => {
+const Table = ({ data, attractionsTypes, unfavoriteAttractions }) => {
    const [gridRef, setGridRef] = useState(null);
    const [width, setWidth] = useState(window.innerWidth);
    const [filteredAttractions, setFilteredAttractions] = useState(null);
@@ -25,10 +22,6 @@ const Table = ({ data, unfavoriteAttractions }) => {
       const value = e.target.value;
       setSelectedAttractionType(value);
    };
-
-   const attractionsTypes = useMemo(() => {
-      return getAttractionsTypes(data);
-   }, [data]);
 
    useEffect(() => {
       if (selectedAttractionType) {

@@ -21,17 +21,6 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
    return d;
 }
 
-function getAttractionsTypes(data) {
-   const mapAttractionTypes = data.map((attraction) => {
-      return attraction.Attraction_Type;
-   });
-   mapAttractionTypes.push('הכל');
-
-   const attractionTypes = [...new Set(mapAttractionTypes)];
-
-   return attractionTypes;
-}
-
 function filterAttractionsByType(attractionType, data) {
 
    if (attractionType === 'הכל') {
@@ -44,4 +33,4 @@ function filterAttractionsByType(attractionType, data) {
 
 }
 
-export { calculateDistance, getAttractionsTypes, filterAttractionsByType };
+export { calculateDistance, filterAttractionsByType };
